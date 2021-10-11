@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.example.mycvhw.HomeFreg
 import com.example.mycvhw.R
 
 private val TAB_TITLES = arrayOf(
@@ -23,7 +24,11 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
     override fun getItem(position: Int): Fragment {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1)
+//        return PlaceholderFragment.newInstance(position + 1)
+        when (position) {
+            0 -> return HomeFreg()
+            else -> return PlaceholderFragment.newInstance(position + 1)
+        }
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
@@ -34,4 +39,5 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) :
         // Show 2 total pages.
         return 4
     }
+
 }

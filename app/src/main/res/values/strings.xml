@@ -1,7 +1,16 @@
 <resources>
     <string name="app_name">CV</string>
-    <string name="tab_text_1">Home</string>
+    <string name="tab_text_1"><icon />
+        Home</string>
     <string name="tab_text_2">About Me</string>
     <string name="tab_text_3">Work</string>
     <string name="tab_text_4">Contact</string>
+    <string name="my_name">Mickey Mouse</string>
+    <string name="job_title"> Software Engineer </string>
+    <string name="experience"> Work Experience </string>
+    <string name="experience_year"> Professional 5 years </string>
+    <string name="experience_skill"> Java | JavaScript| Spring boot |  MySQL | Node JS | jQuery | REST API </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
