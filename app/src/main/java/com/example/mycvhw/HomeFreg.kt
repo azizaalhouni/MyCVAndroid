@@ -1,6 +1,8 @@
 package com.example.mycvhw
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.res.Resources
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -17,6 +19,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.add_new_skill_layout.view.*
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_home_freg.view.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,7 +33,9 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class HomeFreg : Fragment(R.layout.fragment_home_freg) {
+    lateinit var list:ArrayList<Skill>
     var listItems = ArrayList<String>()
+    var phrases =  ArrayList<String>()
     var adapter: ArrayAdapter<String>? = null
     var undoOnClickListener: View.OnClickListener = View.OnClickListener { view ->
         listItems.removeAt(listItems.size - 1)
@@ -46,17 +52,22 @@ class HomeFreg : Fragment(R.layout.fragment_home_freg) {
 //    lateinit var list:ArrayList<Skill>
 
 
+    @SuppressLint("ResourceType")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-//
+        list = ArrayList<Skill>()
+//    val res = getResources()
+//    phrases = Arrays.asList(res.getString(R.array.experience_skill)
 //        list = ArrayList<Skill>()
 //        adapter = Adapter(this,
 //            android.R.layout.simple_list_item_1,
 //            listItems)
 //        listView.adapter = adapter
+        val array: Array<String> = resources.getStringArray(R.array.skills)
+//        listView.get
+
         val view = inflater.inflate(R.layout.fragment_home_freg, container, false)
 //
         view.fab.setOnClickListener {
@@ -70,21 +81,17 @@ class HomeFreg : Fragment(R.layout.fragment_home_freg) {
             mDialogView.btn_add_new_skill.setOnClickListener {
                 mAlertDialog.dismiss()
                 val new_skill_name = mDialogView.et_add_new_skill.text.toString()
-            listItems.add(new_skill_name)
-                Snackbar.make(view, "Item added to list", Snackbar.LENGTH_LONG)
+                val s = Skill(new_skill_name)
+//                s.name = new_skill_name
+                list.add(s)
+//                array.set(2,s.toString())
+//            listItems.add(new_skill_name)
+                Snackbar.make(view, "Item added to list ${s.toString()}", Snackbar.LENGTH_LONG)
                     .setAction("Undo", undoOnClickListener).show()
                 adapter?.notifyDataSetChanged()
-//                // Create an Skill object using the EditText Inputs
-//                val s = Skill(new_skill_name)
-//                s.name = new_skill_name
-//                list.add(s)
-                Toast.makeText(
-                    requireContext(),
-                    "Added into List",
-//                    //${s.toString()}",
-                    Toast.LENGTH_LONG
-                ).show()
-            }
+
+
+          }
                 mDialogView.btn_cancel.setOnClickListener {
                     mAlertDialog.dismiss()
                     Toast.makeText(requireContext(), "Dismiss", Toast.LENGTH_SHORT).show()

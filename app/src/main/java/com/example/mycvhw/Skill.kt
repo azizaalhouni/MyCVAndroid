@@ -6,7 +6,6 @@ class Skill(var name:String?) {
 //lateinit var name:String
 
     override fun toString():String {
-        return ("Skill{" +
-                "name= " + name + "} ")
+        return ("Skill: " +name + " ")
     }
 }

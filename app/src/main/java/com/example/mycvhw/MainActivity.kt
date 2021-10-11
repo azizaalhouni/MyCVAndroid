@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 //        val adapter = ViewPagerAdapter(supportFragmentManager)
 
 
-        
+
     }
 
     fun addNewSkill(view: View) {
