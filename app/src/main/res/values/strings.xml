@@ -8,12 +8,19 @@
     <string name="my_name">Mickey Mouse</string>
     <string name="job_title"> Software Engineer </string>
     <string name="experience"> Work Experience </string>
+    <string name="note"> Career note </string>
     <string name="experience_year"> Professional 5 years </string>
-    <string name="experience_skill"> Java | JavaScript| Spring boot | CSS3 | Bootstrap | MySQL | Node JS | jQuery | REST API </string>
+    <string name="experience_skill">
+<b>Languages:</b> Java, JavaScript, PL/SQL \n
+<b>Frameworks/Web:</b> Spring (Boot, MVC, Security), Hibernate, JDBC \n
+<b>Microservices/Cloud:</b>  AWS, GCP, Docker, Kubernetes, Kafka \n
+<b>Databases:</b>   Oracle PL/SQL, MySQL, MongoDB \n
+<b>Tools:</b>   IntelliJ IDEA, Maven, GitHub, GitLab, UML</string>
     <string-array name="skills">
         <item>Happy</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="career"><b>Completed</b> on-campus studies and currently taking distance education courses to complete a Master\'s Degree in Computer Science (Available for full-time, <b>W-2</b> employment).</string>
 </resources>

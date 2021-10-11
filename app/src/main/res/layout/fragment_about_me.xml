@@ -33,7 +33,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
+                    android:justificationMode="inter_word"
                     android:text="Motivated software developer with more than 5+ years of hands-on, professional experience in the full-stack design and development of software solutions, using all phases of the Software Development Life Cycle. Skills cover a variety of languages and technologies such as Java, Angular 2+, Spring Framework, Oracle PL/SQL.  Have MS and BS in Math and Computer science."
                     android:textColor="#000" />
             </LinearLayout>
