@@ -10,53 +10,99 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/Theme.MyCVHW.AppBarOverlay">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_weight="4">
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:minHeight="?actionBarSize"
-            android:padding="@dimen/appbar_padding"
-            android:text="@string/app_name"
-            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="69dp"
+                android:layout_weight="1"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:tabMode="fixed"/>
+                <TextView
+                    android:id="@+id/LeftTextView"
+                    android:layout_width="127dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="50dp"
+                    android:text="CV"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="69dp"
+                android:layout_weight="1"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/topAppBar"
+                    app:theme="@style/ToolbarTheme"
+                    android:layout_width="154dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="31dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="3dp"
+                    app:menu="@menu/main_menu"
+                     />
+            </RelativeLayout>
+        </LinearLayout>
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tab_text_1"
             android:icon="@drawable/home"
-            />
+            android:text="@string/tab_text_1" />
+
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tab_text_2"
             android:icon="@drawable/home"
-            />
+            android:text="@string/tab_text_2" />
+
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tab_text_3"
             android:icon="@drawable/home"
-            />
+            android:text="@string/tab_text_3" />
+
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tab_text_4"
             android:icon="@drawable/home"
-            />
+            android:text="@string/tab_text_4" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:layout_height="718dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="fixed" />
+    </androidx.viewpager.widget.ViewPager>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
