@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.webkit.JavascriptInterface
+import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.view.menu.MenuBuilder
@@ -19,11 +21,15 @@ import com.example.mycvhw.ui.main.SectionsPagerAdapter
 import com.example.mycvhw.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_home_freg.*
+import android.content.Intent
+import android.net.Uri
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    @SuppressLint("JavascriptInterface")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -45,24 +51,36 @@ class MainActivity : AppCompatActivity() {
 
         topAppBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.telegram -> {
+                R.id.telegram ->{
                     // Handle favorite icon press
-                    true
-                }
+                    openUrl("https://t.me/muntinova")
+                  true}
                 R.id.linkedin -> {
                     // Handle search icon press
+                    openUrl("https://www.linkedin.com/in/muntinova")
                     true
                 }
                 R.id.whatsapp -> {
                     // Handle search icon press
+                    openUrl("http://wa.me//16418191366")
                     true
                 }
                 R.id.gmail -> {
                     // Handle more item (inside overflow menu) press
+
                     true
                 }
                 else -> false
             }
+        }
+
+    }
+
+
+    private fun openUrl(url: String?) {
+        if (url != null) {
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(browserIntent)
         }
     }
     @SuppressLint("RestrictedApi")
@@ -89,6 +107,7 @@ class MainActivity : AppCompatActivity() {
 //            val mAlertDialog = mBuilder.show()
 
     }
+
 
 
 }

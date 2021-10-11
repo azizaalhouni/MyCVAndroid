@@ -65,11 +65,13 @@
                      />
             </RelativeLayout>
         </LinearLayout>
+
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/home"
-            android:text="@string/tab_text_1" />
+            android:text="@string/tab_text_1"
+            />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
@@ -103,6 +105,7 @@
             android:layout_height="wrap_content"
             app:tabMode="fixed" />
     </androidx.viewpager.widget.ViewPager>
+
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
